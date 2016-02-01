@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>RiotControl Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--[if lt IE 9]>
+    <script src="js/es5-shim.js"></script>
+    <script src="js/html5-shiv.js"></script>
+    <script>html5.addElements('todoapp')</script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <gpi-app></gpi-app>
+
+    <script src="js/riotcontrol.js"></script>
+    <script src="itemstore.js"></script>
+
+    <script type="riot/tag" src="widgets/gpi-app.tag"></script>
+    <script type="riot/tag" src="widgets/startup-note.tag"></script>
+    <script type="riot/tag" src="widgets/item-detail.tag"></script>
+    <script type="riot/tag" src="widgets/foo.tag"></script>
+    <script type="riot/tag" src="widgets/gpi-votes-add-startup.tag"></script>
+    <script type="riot/tag" src="widgets/item-app.tag"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/riot/2.3.15/riot+compiler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/riotgear/2.1.3/rg.min.js"></script>
+
+    <script>
+      // State
+      var itemStore = new ItemStore()
+      RiotControl.addStore(itemStore)
+
+
+      // App
+      riot.mount('gpi-app') // Kickoff the Riot app.
+
+      // Routing
+      // var router = function(page, id) {RiotControl.trigger('page-change', {name: page, data: id}) }
+      riot.route(function(page, id) {
+        RiotControl.trigger('page-change', {name: page, data: id})
+      })
+      // riot.route(function(        ) {RiotControl.trigger('page-change', {name: 'index'})})
+      riot.route.start(true);
+    </script>
+
+  </body>
+
+</html>
