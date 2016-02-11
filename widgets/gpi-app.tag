@@ -6,7 +6,7 @@
   </h1>
 
   <item-app
-    if={page == "view"}
+    if={page == "view" || page == ""}
     detail={detail}>
   </item-app>
 

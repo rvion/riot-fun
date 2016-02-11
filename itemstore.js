@@ -8,12 +8,12 @@ function ItemStore() {
   var sample_docs = [sample_doc]
   var syno = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   self.items = [
-    { id: 1, docs: sample_docs, synopsis: syno, title: 'startup 1' },
-    { id: 2, docs: sample_docs, synopsis: syno, title: 'analutoc' },
-    { id: 3, docs: sample_docs, synopsis: syno, title: 'wakaboom' },
-    { id: 4, docs: sample_docs, synopsis: syno, title: 'story driven pro' },
-    { id: 5, docs: sample_docs, synopsis: syno, title: 'adsbooster' },
-    { id: 6, docs: sample_docs, synopsis: syno, title: 'moneyManager' }
+    { done: true, id: 1, docs: sample_docs, synopsis: syno, title: 'startup 1' },
+    { done: true, id: 2, docs: sample_docs, synopsis: syno, title: 'analutoc' },
+    { done: true, id: 3, docs: sample_docs, synopsis: syno, title: 'wakaboom' },
+    { done: true, id: 4, docs: sample_docs, synopsis: syno, title: 'story driven pro' },
+    { done: false, id: 5, docs: sample_docs, synopsis: syno, title: 'adsbooster' },
+    { done: false, id: 6, docs: sample_docs, synopsis: syno, title: 'moneyManager' }
   ]
 
   // Init our list view.
@@ -43,8 +43,10 @@ function ItemStore() {
   // Add to our item collection.
   // Could push this to a server API.
   self.on('item_detail_add', function(title) {
-    self.items.push({ id: self.items.length+1, title: title })
+    var newitem = { id: self.items.length+1, title: title }
+    self.items.push(newitem)
     self.trigger('item_list_changed', self.items)
+    self.trigger('item_detail_changed', newitem)
   })
 
   // Pull item for URL route. (id)

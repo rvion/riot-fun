@@ -1,6 +1,6 @@
 <gpi-votes-add-startup>
   <div if={ !edit }>
-    <button onclick={ add }>Add</button>
+    <button class="btn btn-primary btn-sm" onclick={ add }>Admin: Ajouter Dossier Startup</button>
   </div>
 
   </div>
@@ -8,9 +8,9 @@
   <div if={ edit }>
     <form onsubmit={ submit }>
       <input name='title'>
-      <button>Submit</button>
+      <button>Ajouter</button>
     </form>
-    <button onclick={ cancel }>Cancel</button>
+    <button onclick={ cancel }>Anuler</button>
   </div>
 
   <style scoped>
@@ -31,7 +31,7 @@
       RiotControl.trigger('item_detail_add', this.title.value)
       this.title.value = ''
       this.edit = false
-      riot.route('view')
+      // riot.route('view')
     }
 
     cancel(e) {

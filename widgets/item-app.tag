@@ -19,7 +19,22 @@
       <h4>Startups</h4>
       <ul>
         <li each={ items }>
-          <a href={ '#view/' + id }>{ title }</a>
+          <div style="display:inline-block" if={done}>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          </div>
+          <a class={selected: detail.id == id} href={ '#view/' + id }>{ title }</a>
+          <div class="notepannel"
+            if={selected: detail.id == id}
+            each={ [{a:"lien avec Paris"},{a:"barrières à l'entrée"},{a:"Ecologique"},{a:"sympa"}] }
+          >
+            {a}:<br>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-default" aria-label="Left Align">1</button>
+                <button type="button" class="btn btn-sm btn-default" aria-label="Center Align">2</button>
+                <button type="button" class="btn btn-sm btn-default" aria-label="Right Align">3</button>
+                <button type="button" class="btn btn-sm btn-default" aria-label="Justify">4</button>
+              </div>
+          </div>
         </li>
       </ul>
       <gpi-votes-add-startup>
@@ -35,7 +50,6 @@
         <!-- <iframe src="/startups/test1/pdf-sample.pdf" style="width:718px; height:700px;" frameborder="0"></iframe> -->
       <!-- </div> -->
     </td>
-
     <!--
     <td>
       <form>
@@ -49,6 +63,9 @@
 
   <!-- style -->
   <style scoped>
+    .notepannel {margin-left: 30px}
+    a.selected{background: #EBE6FF;}
+    th{background: rgb(222, 224, 232);}
     .left-pane{width: 250px;}
     .table {width: 100%px; }
     form {display: inline-block; }

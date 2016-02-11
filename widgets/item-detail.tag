@@ -17,16 +17,15 @@
     var self= this
     self.tabs = new RgTabs({
       tabs: [{
-        heading: 'Tab <em>one</em>',
-        content: 'This is tab one'
-      }, {
-        heading: 'Tab two',
-        content: 'This is tab two',
+        heading: 'Fichier 1',
+        content: 'Fichier 1',
         active: true
       }, {
-        heading: 'Disabled tab',
-        content: 'This is disabled tab',
-        disabled: true
+        heading: 'Fichier 2',
+        content: 'Fichier 2'
+      }, {
+        heading: 'Fichier 3',
+        content: 'Fichier 3'
       }]
     })
 
