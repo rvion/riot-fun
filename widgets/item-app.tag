@@ -10,7 +10,7 @@
 
     <td class="left-pane well">
       <div if={ !edit }>
-      <input name='input' placeholder='Filter..' onkeyup={ search }>
+      <input name='input' placeholder='Filtrer...' onkeyup={ search }>
 
       <form onsubmit={ clear }>
         <button disabled={ !txt }>Clear</button>
