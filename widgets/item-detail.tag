@@ -8,7 +8,7 @@
     <div><b>Synopsis:</b> { opts.item.synopsis }</div>
     <rg-tabs tabs="{ tabs }"></rg-tabs>
     <iframe src="/startups/test1/pdf-sample.pdf" style="width:718px; height:100%; min-height:700px;" frameborder="0"></iframe>
-
+    <discuss></discuss>
   </div>
   <style scoped>
     button {float: right;}
