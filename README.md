@@ -10,4 +10,4 @@ browser-sync start --server --files "*"
 
 ```
 docker build -t rvion/gpi-test .
-```
+``

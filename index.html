@@ -33,20 +33,22 @@
 
     <script>
       // State
-      var itemStore = new ItemStore()
-      RiotControl.addStore(itemStore)
+      riot.compile(function(){
 
+        var itemStore = new ItemStore()
+        RiotControl.addStore(itemStore)
 
-      // App
-      riot.mount('gpi-app') // Kickoff the Riot app.
+        // App
+        riot.mount('gpi-app') // Kickoff the Riot app.
 
-      // Routing
-      // var router = function(page, id) {RiotControl.trigger('page-change', {name: page, data: id}) }
-      riot.route(function(page, id) {
-        RiotControl.trigger('page-change', {name: page, data: id})
+        // Routing
+        // var router = function(page, id) {RiotControl.trigger('page-change', {name: page, data: id}) }
+        riot.route(function(page, id) {
+          RiotControl.trigger('page-change', {name: page, data: id})
+        })
+        // riot.route(function(        ) {RiotControl.trigger('page-change', {name: 'index'})})
+        riot.route.start(true);
       })
-      // riot.route(function(        ) {RiotControl.trigger('page-change', {name: 'index'})})
-      riot.route.start(true);
     </script>
 
   </body>
