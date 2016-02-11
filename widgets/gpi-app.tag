@@ -1,10 +1,20 @@
 <gpi-app>
-
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../"
+        class="navbar-brand"
+        style="color: #563d7c;font-weight: 500;">
+        GPI: Revues des candidats
+      </a>
+    </div>
+  </div>
+<!-- </header> -->
+<!--
   <h1>
-    GPI: {startupname}
+    GPI: Revues des candidats
     <a href="https://github.com/jimsparkman/RiotControl"></a>
   </h1>
-
+ -->
   <item-app
     if={page == "view" || page == ""}
     detail={detail}>

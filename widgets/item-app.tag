@@ -1,6 +1,6 @@
 <item-app>
 
-  <table class='table table-bordered'>
+  <table class='table table-bordered' style="margin-left:10px;margin-right:10px">
   <tr>
     <th>Startups</th>
     <th>Documents</th>
@@ -8,15 +8,13 @@
   </tr>
   <tr>
 
-    <td class="left-pane">
+    <td class="left-pane well">
       <div if={ !edit }>
       <input name='input' placeholder='Filter..' onkeyup={ search }>
 
       <form onsubmit={ clear }>
         <button disabled={ !txt }>Clear</button>
       </form>
-
-      <h4>Startups</h4>
       <ul>
         <li each={ items }>
           <div style="display:inline-block" if={done}>
@@ -65,9 +63,13 @@
   <style scoped>
     .notepannel {margin-left: 30px}
     a.selected{background: #EBE6FF;}
-    th{background: rgb(222, 224, 232);}
+    th
+    {
+      background: rgb(250, 246, 255);
+      /*box-shadow: 0px 4px 1px #9A9A9A;*/
+    }
     .left-pane{width: 250px;}
-    .table {width: 100%px; }
+    .table {width: auto; }
     form {display: inline-block; }
   </style>
 
